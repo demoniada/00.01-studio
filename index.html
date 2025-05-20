@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | 00.01 Studio</title>
+  <link rel="icon" href="logo1.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Если требуется добавить специфические стили для домашней страницы */
+  </style>
+</head>
+<body class="home">
+  <!-- Сайдбар -->
+  <div class="sidebar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="logo.png" alt="00.01 Studio">
+      </a>
+    </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html">home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">projects</a>
+          <ul class="dropdown-content">
+            <li><a href="interior.html">interior</a></li>
+            <li><a href="renovation.html">renovation</a></li>
+            <li><a href="exterior.html">exterior</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <!-- Главная страница оформлена за счет фонового изображения -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var dropdownToggle = document.querySelector(".dropdown-toggle");
+      var dropdown = dropdownToggle.parentElement;
+      dropdownToggle.addEventListener("click", function(e) {
+        e.preventDefault();
+        dropdown.classList.toggle("active");
+      });
+      document.addEventListener("click", function(e) {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove("active");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
