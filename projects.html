@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | 00.01 Studio</title>
+  <title>Projects | 00.01 Studio</title>
   <link rel="icon" href="logo1.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+  <!-- Обновлённый шрифт Montserrat Alternates -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
     main {
-      color: #C9A978;
+      color: #F0E4D5;
     }
     .project-gallery, .designer-portraits {
       display: flex;
@@ -29,11 +30,11 @@
   </style>
 </head>
 <body>
-  <!-- Сайдбар -->
   <div class="sidebar">
     <div class="logo">
       <a href="index.html"><img src="logo.png" alt="00.01 Studio"></a>
     </div>
+    <div class="hamburger">&#9776;</div>
     <nav class="menu">
       <ul>
         <li><a href="index.html">home</a></li>
@@ -52,8 +53,8 @@
   </div>
   <!-- Основной контент -->
   <main>
-    <h1>About 00.01 Studio</h1>
-    <p>00.01 Studio – креативное пространство, где дизайн встречается с мастерством. Мы специализируемся на современном минимализме и инновационной эстетике.</p>
+    <h1>Projects</h1>
+    <p>00.01 Studio is a creative space merging modern minimalism with innovative aesthetics.</p>
     <div class="project-gallery">
       <div class="project-item"><img src="project1.jpg" alt="Project 1"></div>
       <div class="project-item"><img src="project2.jpg" alt="Project 2"></div>
@@ -70,7 +71,7 @@
     </div>
   </main>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       var dropdownToggle = document.querySelector(".dropdown-toggle");
       var dropdown = dropdownToggle.parentElement;
       dropdownToggle.addEventListener("click", function(e) {
@@ -82,6 +83,12 @@
           dropdown.classList.remove("active");
         }
       });
+      var hamburger = document.querySelector('.hamburger');
+      if (hamburger) {
+        hamburger.addEventListener('click', function () {
+          document.querySelector('.menu').classList.toggle('active');
+        });
+      }
     });
   </script>
 </body>
