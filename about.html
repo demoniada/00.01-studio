@@ -1,39 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | 00.01 Studio</title>
-  <link rel="icon" href="logo1.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="logo1.png" type="image/png" />
+  <!-- Updated font: Montserrat Alternates -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
   <style>
     main {
-      color: #C9A978;
+      color: #F0E4D5;
     }
-    .project-gallery, .designer-portraits {
+    /* Галерея проектов и портреты дизайнеров */
+    .project-gallery,
+    .designer-portraits {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
       margin-top: 20px;
     }
-    .project-item, .designer {
+    .project-item,
+    .designer {
       flex: 1 1 calc(50% - 20px);
     }
-    .project-item img, .designer img {
+    .project-item img {
       width: 100%;
-      height: auto;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+    /* Обеспечиваем, чтобы изображения дизайнеров имели фиксированную высоту 
+       и показывали верхнюю часть фотографии */
+    .designer-portraits .designer img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: top;
       display: block;
     }
   </style>
 </head>
 <body>
-  <!-- Сайдбар -->
   <div class="sidebar">
     <div class="logo">
-      <a href="index.html"><img src="logo.png" alt="00.01 Studio"></a>
+      <a href="index.html">
+        <img src="logo.png" alt="00.01 Studio" />
+      </a>
     </div>
+    <div class="hamburger">&#9776;</div>
     <nav class="menu">
       <ul>
         <li><a href="index.html">home</a></li>
@@ -50,50 +66,70 @@
       </ul>
     </nav>
   </div>
-  <!-- Основной контент -->
   <main>
     <h1>About 00.01 Studio</h1>
-    <p>00.01 Studio is a creative space where design meets craftsmanship. We specialize in modern minimalism and innovative aesthetics, forging a unique environment where creativity, precision, and artistry converge. Our studio is not merely a workplace, but a vibrant community dedicated to reimagining every element of design and challenging conventional boundaries. From the inception of an idea to the final execution, every step of our process is infused with passion, expertise, and an uncompromising commitment to excellence.
-
-Our process begins with extensive research, drawing inspiration from contemporary art, architecture, and global trends. We meticulously brainstorm and refine ideas, ensuring that each project reflects a harmonious balance between functionality and beauty. By stripping away the superfluous, we reveal the essence of a design that speaks to modern sensibilities while remaining timeless. Every project is a testament to our belief that the best design is one that communicates clearly and elegantly, transforming spaces and experiences alike.
-
-Innovation stands at the heart of what we do. At 00.01 Studio, we constantly push the envelope of traditional design practices by embracing cutting-edge technologies and novel methodologies. Our creative team explores new materials, techniques, and digital tools to craft solutions that are as forward-thinking as they are practical. This innovative approach enables us to create designs that not only captivate but also function seamlessly in a modern world. We are driven by the desire to go beyond trends, creating work that endures and inspires.
-
-A significant highlight of our journey has been our collaboration with On The Verge. This partnership has allowed us to merge our design philosophy with a fresh, dynamic perspective, resulting in projects that are both experimental and refined. By joining forces, we have expanded our creative horizons and achieved innovative breakthroughs that set new benchmarks within the industry. Our collaboration with On The Verge exemplifies our commitment to exploring synergies and redefining boundaries, delivering work that is both visionary and impactful.
-
-At 00.01 Studio, we believe that design is a powerful medium for storytelling. Our work is a narrative of passion, creativity, and technical mastery, built upon years of experience and an unwavering pursuit of excellence. We see every project as an opportunity to leave a lasting impression on the world, enriching everyday lives with thoughtfully crafted design. Our commitment to innovation and quality has made us a trusted partner for clients seeking unique and transformative design solutions.
-
-In every project we undertake, we strive to create experiences that resonate deeply and inspire others to see the beauty in simplicity. Our philosophy is rooted in the belief that true innovation comes from embracing minimalism, allowing each element to breathe and speak for itself. We continue to push creative boundaries, challenging ourselves and our partners to reimagine what design can achieve. With every new endeavor, our goal is to set higher standards and create work that not only impresses but endures.
-
-Welcome to 00.01 Studio, a space where collaboration, creativity, and craftsmanship unite to redefine the essence of design. We inspire progress daily.</p>
+    <p>
+      00.01 Studio is a creative hub where innovative design meets artisanal craftsmanship.
+      Based on a philosophy that minimalism can be both modern and elegant, our studio transforms everyday spaces into extraordinary environments.
+      We focus on creating interiors and exteriors that captivate the beholder while ensuring supreme functionality in every project.
+    </p>
+    <p>
+      Our team is composed of seasoned designers, visionary artists, and skilled craftsmen who work in perfect harmony.
+      By challenging conventional design norms, we seamlessly blend form with function, producing spaces that are both aesthetically striking and highly practical.
+      Whether it’s reimagining a residence, executing a major renovation, or designing a captivating facade, our commitment to detail is unwavering.
+    </p>
+    <p>
+      Creativity flows through every step of our process at 00.01 Studio.
+      We continuously explore innovative materials, emerging trends, and cutting-edge techniques to ensure that each project is both timely and timeless.
+      Our personalized approach allows us to craft solutions that resonate uniquely with our clients, making their visions a reality.
+    </p>
+    <p>
+      We invite you to peruse our diverse portfolio, where every project tells its own distinct story.
+      Discover how our dedication to quality and precision transforms spaces into experiences that are both visually and functionally exceptional.
+      Let us collaborate in redefining your surroundings, creating a space that inspires and endures.
+    </p>
+    <p>
+      Our passion for innovation, sustainability, and aesthetic excellence drives everything we do.
+      Together, we can create environments that are as captivating as they are practical, leaving a lasting impression on all who experience them.
+    </p>
     <div class="project-gallery">
-      <div class="project-item"><img src="project1.jpg" alt="Project 1"></div>
-      <div class="project-item"><img src="project2.jpg" alt="Project 2"></div>
+      <div class="project-item">
+        <img src="project1.jpg" alt="Project 1" />
+      </div>
+      <div class="project-item">
+        <img src="project2.jpg" alt="Project 2" />
+      </div>
     </div>
     <div class="designer-portraits">
       <div class="designer">
-        <img src="designer-male.png" alt="Male Designer">
+        <img src="designer-male.png" alt="Male Designer" />
         <p>Lead Designer</p>
       </div>
       <div class="designer">
-        <img src="designer-female.png" alt="Female Designer">
+        <img src="designer-female.png" alt="Female Designer" />
         <p>Creative Director</p>
       </div>
     </div>
   </main>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       var dropdownToggle = document.querySelector(".dropdown-toggle");
       var dropdown = dropdownToggle.parentElement;
-      dropdownToggle.addEventListener("click", function(e) {
+      dropdownToggle.addEventListener("click", function (e) {
         e.preventDefault();
         dropdown.classList.toggle("active");
       });
-      document.addEventListener("click", function(e) {
+      document.addEventListener("click", function (e) {
         if (!dropdown.contains(e.target)) {
           dropdown.classList.remove("active");
         }
       });
+      var hamburger = document.querySelector(".hamburger");
+      if (hamburger) {
+        hamburger.addEventListener("click", function () {
+          document.querySelector(".menu").classList.toggle("active");
+        });
+      }
     });
   </script>
 </body>
