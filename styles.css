@@ -1,18 +1,18 @@
 /* === Глобальные стили === */
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat Alternates', sans-serif;
   margin: 0;
   padding: 0;
-  color: #C9A978;
+  color: #F0E4D5;
+  background-color: #33312F;
 }
 
 body.home {
-  background: url('main-image.png') no-repeat center center fixed;
-  background-size: cover;
+  background-color: #33312F;
 }
 
 body:not(.home) {
-  background: #2E2D29;
+  background-color: #33312F;
   background-attachment: fixed;
 }
 
@@ -26,6 +26,8 @@ body:not(.home) {
   padding: 20px;
   box-sizing: border-box;
 }
+
+/* Вертикальная линия из сайдбара удалена */
 
 /* === Логотип === */
 .logo {
@@ -42,17 +44,6 @@ body:not(.home) {
   position: relative;
 }
 
-/* Вертикальная линия справа от меню */
-.menu::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 110px; /* отступ можно корректировать */
-  bottom: 0;
-  width: 2px;
-  background-color: rgba(201, 169, 120, 0.3);
-}
-
 .menu ul {
   list-style: none;
   margin: 0;
@@ -65,7 +56,7 @@ body:not(.home) {
 
 .menu li a {
   text-decoration: none;
-  color: #C9A978;
+  color: #F0E4D5;
   font-weight: 400;
   font-size: 0.9em;
   transition: color 0.3s;
@@ -86,12 +77,11 @@ body:not(.home) {
   list-style: none;
   padding: 10px;
   z-index: 100;
-  left: 62%; /* Подменю появляется справа от родителя */
+  left: 27%; /* Подменю теперь смещено на 15% левее от предыдущего значения */
   top: 0;
   width: 180px;
 }
 
-}
 
 .dropdown-content li {
   padding: 5px 10px;
@@ -99,7 +89,7 @@ body:not(.home) {
 
 .dropdown-content li a {
   text-decoration: none;
-  color: #C9A978;
+  color: #F0E4D5;
   transition: color 0.3s;
 }
 
@@ -109,6 +99,72 @@ body:not(.home) {
 
 .dropdown.active .dropdown-content {
   display: block;
+}
+
+/* === Вертикальное центрирование меню для десктопа с смещением вправо на 50% === */
+@media (min-width: 769px) {
+  .sidebar nav.menu {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translate(50%, -50%);
+    text-align: left;
+  }
+}
+
+/* === Адаптивные стили для мобильных устройств === */
+@media (max-width: 768px) {
+  /* Сайдбар перемещается сверху */
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Гамбургер для мобильного меню */
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    color: #F0E4D5;
+    margin: 10px;
+  }
+  
+  /* Скрываем меню по умолчанию */
+  .menu {
+    display: none;
+  }
+  
+  /* При активном состоянии отображаем меню */
+  .menu.active {
+    display: block;
+    width: 100%;
+    background-color: #33312F;
+    padding: 10px 0;
+  }
+  
+  .menu ul {
+    display: block;
+  }
+  
+  .menu li {
+    margin-bottom: 10px;
+  }
+  
+  main {
+    margin-left: 0;
+    padding: 20px;
+  }
+}
+
+/* Для экранов больше 768px: скрываем гамбургер */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
 }
 
 /* === Основной контент === */
