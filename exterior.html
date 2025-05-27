@@ -5,27 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exterior Projects | 00.01 Studio</title>
   <link rel="icon" href="logo1.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+  <!-- Обновлённый шрифт Montserrat Alternates -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Основные стили */
     main {
       margin-left: calc(10vw + 250px + 20px);
       padding: 40px;
-      color: #C9A978;
+      color: #F0E4D5;
       text-align: center;
     }
     h1 {
       text-align: center;
       margin-bottom: 40px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Montserrat Alternates', sans-serif;
       font-weight: 400;
     }
-    /* Сетка для страницы экстерьер:
-       - Первый проект занимает всю ширину
-       - Второй и третий проекты расположены в одну строку
-       - Содержимое отцентрировано
-    */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -34,7 +29,6 @@
       margin: 20px auto;
       justify-items: center;
     }
-    /* Первый элемент занимает всю ширину */
     .project-item:first-child {
       grid-column: 1 / -1;
     }
@@ -50,74 +44,26 @@
     .project-item img:hover {
       transform: scale(1.02);
     }
-    /* Для нижних изображений (проект 2 и 3) фиксированная высота, чтобы они были одинаковыми */
     .projects-grid .project-item:not(:first-child) img {
       height: 300px;
       object-fit: cover;
     }
-    /* Текст отцентрирован, линии убраны */
     .text-block {
       font-size: 1.2em;
       line-height: 1.6;
       padding: 10px;
       text-align: center;
-      color: #C9A978;
+      color: #F0E4D5;
+      border-left: 2px solid #F0E4D5;
     }
-    /* Модальное окно и карусель (без изменений) */
-    .modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-    }
-    .modal-content {
-      position: relative;
-      max-width: 90%;
-      max-height: 90%;
-    }
-    .modal-content img {
-      max-width: 100%;
-      max-height: 90vh;
-      width: auto;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      object-fit: contain;
-    }
-    .close-modal {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      color: #fff;
-      font-size: 24px;
-      cursor: pointer;
-    }
-    .carousel-nav {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 50%;
-      color: #fff;
-      font-size: 48px;
-      cursor: pointer;
-      opacity: 0;
-    }
-    .carousel-nav.left { left: 0; }
-    .carousel-nav.right { right: 0; }
   </style>
 </head>
 <body>
-  <!-- Сайдбар -->
   <div class="sidebar">
     <div class="logo">
       <a href="index.html"><img src="logo.png" alt="00.01 Studio"></a>
     </div>
+    <div class="hamburger">&#9776;</div>
     <nav class="menu">
       <ul>
         <li><a href="index.html">home</a></li>
@@ -134,12 +80,9 @@
       </ul>
     </nav>
   </div>
-
-  <!-- Основной контент -->
   <main>
     <h1>Exterior & Transformation</h1>
     <div class="projects-grid">
-      <!-- Проект 1: занимает всю ширину, карусель из двух фото -->
       <div class="project-item">
         <a href="#" class="carousel-trigger" data-project="1">
           <img src="exterior1.jpg" alt="Exterior Project 1">
@@ -148,7 +91,6 @@
           <p>Exterior project 1: Creating open spaces that merge nature with design.</p>
         </div>
       </div>
-      <!-- Проект 2 -->
       <div class="project-item">
         <a href="#" class="carousel-trigger" data-project="2">
           <img src="exterior2.jpg" alt="Exterior Project 2">
@@ -157,7 +99,6 @@
           <p>Exterior project 2: Bringing contemporary innovation outdoors.</p>
         </div>
       </div>
-      <!-- Проект 3 -->
       <div class="project-item">
         <a href="#" class="carousel-trigger" data-project="3">
           <img src="exterior3.jpg" alt="Exterior Project 3">
@@ -168,8 +109,6 @@
       </div>
     </div>
   </main>
-
-  <!-- Модальное окно и карусель -->
   <div id="modal" class="modal">
     <div class="modal-content">
       <span class="close-modal">&times;</span>
@@ -178,17 +117,13 @@
       <span class="carousel-nav right">&#10095;</span>
     </div>
   </div>
-
-  <!-- JavaScript для каруселей -->
   <script>
-    // Изменили массив для проекта 1 — теперь только два фото
     var carouselImages = {
       1: ["exterior1.jpg", "exterior1_2.jpg"],
       2: ["exterior2.jpg", "exterior2_2.jpg", "exterior2_3.jpg"],
       3: ["exterior3.jpg", "exterior3_2.jpg", "exterior3_3.jpg"]
     };
     var currentProject = null, currentIndex = 0;
-    
     function openModal(project, index) {
       currentProject = project;
       currentIndex = index;
@@ -196,25 +131,21 @@
       document.getElementById("modal-image").src = carouselImages[project][index];
       modal.style.display = "flex";
     }
-    
     function closeModal() {
       document.getElementById("modal").style.display = "none";
     }
-    
     function showNext() {
       if (currentProject !== null) {
         currentIndex = (currentIndex + 1) % carouselImages[currentProject].length;
         document.getElementById("modal-image").src = carouselImages[currentProject][currentIndex];
       }
     }
-    
     function showPrev() {
       if (currentProject !== null) {
         currentIndex = (currentIndex - 1 + carouselImages[currentProject].length) % carouselImages[currentProject].length;
         document.getElementById("modal-image").src = carouselImages[currentProject][currentIndex];
       }
     }
-    
     document.addEventListener("DOMContentLoaded", function() {
       document.querySelectorAll(".carousel-trigger").forEach(function(trigger) {
         trigger.addEventListener("click", function(e) {
@@ -222,38 +153,30 @@
           openModal(this.getAttribute("data-project"), 0);
         });
       });
-      
       document.querySelector(".close-modal").addEventListener("click", closeModal);
       document.querySelector(".carousel-nav.left").addEventListener("click", showPrev);
       document.querySelector(".carousel-nav.right").addEventListener("click", showNext);
-      
       document.getElementById("modal").addEventListener("click", function(e) {
         if (e.target === this) closeModal();
       });
-    });
-  </script>
-  
-  <!-- JavaScript для кликабельного меню -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var dropdownToggles = document.querySelectorAll(".dropdown-toggle");
-      dropdownToggles.forEach(function(toggle) {
-        toggle.addEventListener("click", function(e) {
-          e.preventDefault();
-          var parentDropdown = this.parentElement;
-          parentDropdown.classList.toggle("active");
-        });
+      var dropdownToggle = document.querySelector(".dropdown-toggle");
+      var dropdown = dropdownToggle.parentElement;
+      dropdownToggle.addEventListener("click", function(e) {
+        e.preventDefault();
+        dropdown.classList.toggle("active");
       });
       document.addEventListener("click", function(e) {
-        dropdownToggles.forEach(function(toggle) {
-          var parentDropdown = toggle.parentElement;
-          if (!parentDropdown.contains(e.target)) {
-            parentDropdown.classList.remove("active");
-          }
-        });
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove("active");
+        }
       });
+      var hamburger = document.querySelector('.hamburger');
+      if (hamburger) {
+        hamburger.addEventListener('click', function() {
+          document.querySelector('.menu').classList.toggle('active');
+        });
+      }
     });
   </script>
-  
 </body>
 </html>
